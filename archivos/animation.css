@@ -1,0 +1,58 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 65px;
+}
+.navbar-list li{
+    position: relative;
+    padding: 0;
+}
+
+.navbar-list a:hover{
+    color: #aeaaaa;
+    height: 20px;
+}
+
+.navbar-list a::after {
+    content: "";
+    background:#aeaaaa;
+    width: 100%;
+    height: 2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.15s ease;
+}
+
+.navbar-list a:hover::after {
+    color: #aeaaaa;
+    transform: scale(1);
+    transform-origin: bottom left;
+}
+
+@keyframes fade {
+    from {
+        opacity: -1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slide-down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(5px)
+    }
+}
+
+.open img {
+    animation: fade 1.2s ease-in, slide-down 1s ease-in-out;
+}
+
+.info-container:hover {
+    transform: perspective(600px) rotateY(90deg);
+    box-shadow: 0 5px 10px #000;
+}

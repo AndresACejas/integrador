@@ -26,9 +26,10 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    padding: 0px 35px;
+    padding: 0px 35px 0px 35px;
     background:var(--backgrond);
     position: fixed;
+    top: fixed;
 }
 
 .logo {
@@ -73,7 +74,7 @@
 
 /* Home */
 
-.home {
+.open {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -82,11 +83,14 @@
     gap: 40px;
 }
 
-.home img {
-    height: 550px;
+.open img {
+    margin-top: 65px;
+    height: 78%;
+    width: 70%;
+    border-radius: 5px;
 }
 
-.home h1 {
+.open h1 {
     font-size: 40px;
     font-weight: 800;
     background: linear-gradient(to top right, #003300 0%, #99ff33 100%);
@@ -97,7 +101,7 @@
 
 /* Nosotros */
 
-.nosotros {
+#nosotros {
     width: 100%;
     padding: 60px;
     display: flex;
@@ -108,7 +112,7 @@
     flex-wrap: wrap;
 }
 
-.nosotros h2{
+#nosotros h2{
     font-size: 32px;
     font-weight: 600;
     color: var(--oliva);
@@ -123,45 +127,89 @@
     align-items: center;
     padding: 40px;
     gap: 10px;
+    flex-wrap: wrap;
+}
+.nos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.info-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
+.carta {
+    position: relative;
     width: 300px;
-    padding: 15px;
-    gap:10px;
-    background: #696969;
-    border-radius: 20px;
+    height: 350px;
+    margin: 20px;
 }
 
-.info-container img {
-    height:300px;
-    width: 280px;
-    border-radius: 15px;
+.carta .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;         
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    
 }
 
-.info-acesoramiento {
-    margin-left: 20%;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    gap: 30px;
+.carta .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
 }
 
-.info-acesoramiento h3 {
-    font-size: 26px;
-    font-weight: 600;
+.carta .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.info-acesoramiento p {
-    font-size: 14px;
-    font-weight: 500;
+.carta .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
 }
 
-.producto {
+.carta .back {
+    transform: perspective(600px) rotateY(180deg);
+    background-color: #565353;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.carta .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+.carta .back p {
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+.carta:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.carta:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+#producto {
     width: 100%;
     padding: 60px;
     display: flex;
@@ -185,13 +233,15 @@
 
 .card img{
     margin: 5px;
-    height: 80%;
+    height: 65%;
     width: 95%;
     border-radius: 10px;
 }
 
 .card-descripcion{
     padding: 10px;
+    height: 20%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,7 +303,7 @@
     display: none;
 }
 
-@media (max-width 576px) {
+@media (max-width:960px) {
     .navbar ul {
         background: var(--backgrond);
         width: 100%;
@@ -270,4 +320,83 @@
     .navbar i {
         display: block;
     }
+
+    #toggle-menu:checked ~ .navbar-list {
+        display: flex;
+    }
 }
+
+
+/* Inisio de sesion */
+
+
+.inicio,
+.registro,
+.recupero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 50px;
+    padding: 50px;
+    width: 100%;
+}
+
+.inicio-secion,
+.inicio-registro,
+.inicio-recupero {
+    background-image: url(./logo-cancha.jpg);
+    background-repeat: no-repeat;
+    border: #000000;
+    border-radius: 15px;
+    height: 460px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #f8f3f3;
+}
+
+.inicio-secion h2,
+.inicio-registro h2,
+.inicio-recupero  h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.inicio-secion input,
+.inicio-secion button,
+.inicio-registro input,
+.inicio-registro button,
+.inicio-recupero input,
+.inicio-recupero button {
+    height: 30px;
+    width: 50%;
+    background: linear-gradient(to top right, #0a7a0a 0%, #99ff33 100%);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: #f3f3f3;
+}
+
+
+.inicio-secion ::placeholder,
+.inicio-secion input,
+.inicio-secion a,
+.inicio-registro ::placeholder,
+.inicio-registro input,
+.inicio-registro a,
+.inicio-recupero ::placeholder,
+.inicio-recupero input,
+.inicio-recupero a {
+    color: #f3f3f3;
+}
+
+
+
+
+

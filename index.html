@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="./archivos/style.css">
+    <link rel="stylesheet" href="./archivos/mediaqueri.css">
+    <link rel="stylesheet" href="./archivos/animation.css">
 </head>
 <body>
     <header class="header">
@@ -14,60 +16,71 @@
             <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
             <input type="checkbox" id="toggle-menu">
             <ul class="navbar-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Productos</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#producto">Productos</a></li>
                 <li><a href="./inicio.html">Se Parte</a></li>
             </ul>
 
             <img src="./archivos/cart.jpg" alt="carrito de compras" class="cart-icon">
+            
         </nav>
 
     </header>
 
-    <section class="home">
-        <img src="./archivos/jugando.jpg" alt="jugando a la pelota">
-        <h1>ACesoramiento</h1>
-       
+    <section id="home">
+        <div class="open">
+            <img src="./archivos/jugando.jpg" alt="jugando a la pelota">
+            <h1>ACesoramiento</h1>
+        </div>
     </section>
 
-    <section class="Nosotros">
+    <section id="nosotros">
         <h2>Desde <span>ACesaramiento</span> te guiamos en la busqueda del producto que mas se adecua a tus objetivos y capacidades, para que asi puedas dar el 100% de vos!</h2>
-
+    <div class="nos">
         <!-- control -->
-        <div class="container">
-            <div class="info-container">
+        <div class="Carta">
+            <div class="face front">
                 <img src="./archivos/bota-control-adidas.webp" alt="botines para control">
-                <div class="info-acesoramiento">
+                <h3>ADIDAS</h3>
+            </div>    
+                <div class="face back">
                     <h3>CONTROL ⚽</h3>
                     <p>Hace esos pases claves</p>
                 </div>
             </div>
 
-            <!-- traccion -->
-            <div class="info-container">
+        <!-- traccion -->
+        <div class="carta">    
+            <div class="face front">
                 <img src="./archivos/bota-velocidad-nike.jpg" alt="botines para control">
-                <div class="info-acesoramiento">
+                <h3>NIKE</h3>
+            </div>    
+                <div class="face back">
                     <h3>TRACCION ⚡</h3>
                     <p>Marca la diferencia en mts</p>
                 </div>
-            </div>
-        
-            <!-- clasicos -->
-            <div class="info-container">
-             <img src="./archivos/bota-clasica-puma.webp" alt="botines para control">
-                <div class="info-acesoramiento">
-                    <h3>CLASICOS🎩</h3>
-                    <p>Nunca pierdas la elegancia</p>
-             </div>
-            </div>
         </div>
         
+            <!-- clasicos -->
+
+        <div class="carta">    
+            <div class="face front">
+                <img src="./archivos/bota-clasica-puma.webp" alt="botines para control">
+                <h3>PUMA</h3>
+            </div>
+             <div class="face back">
+                <h3>CLASICOS🎩</h3>
+                <p>Nunca pierdas la elegancia</p>
+             </div>
+            </div>
+    </div>        
     </section>
 <!-- productos -->
 
 <!-- 1 -->
-    <section class="producto">
+    <section id="producto">
+        
         <div class="container card">
            <img src="./archivos/imagenes/Nike-Mercurial-dorados.jpg" alt="nike-mercurial-rosas">
             <div class="card-descripcion">

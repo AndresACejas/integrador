@@ -4,19 +4,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./archivos/style.css">
+    <link rel="stylesheet" href="./archivos/mediaqueri.css">
+    <link rel="stylesheet" href="./archivos/animation.css">
 </head>
-<body>
+<body class="body">
+    <header class="header">
+        <img src="./archivos/logo-cancha.jpg" alt="identidad" class="logo" >
+        <nav class="navbar">
+            <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
+            <input type="checkbox" id="toggle-menu">
+            <ul class="navbar-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="./inicio.html">Se Parte</a></li>
+            </ul>
+
+            <img src="./archivos/cart.jpg" alt="carrito de compras" class="cart-icon">
+            
+        </nav>
+
+    </header>
+
+    <br>
+    <br>
+
     <div class="inicio">
         <div class="inicio-secion">
-            <h2>INICIAR SECION</h2>
+            <h2>INICIAR SESION</h2>
             <label for="text" id="usuario"></label>
             <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
             <br>
             <label for="text" id="passwor"></label>
-            <input type="text" name="passwor" id="passwor" placeholder="Contraseña"required>
+            <input type="password" name="passwor" id="passwor" placeholder="Contraseña"required>
             <br>
-            <button><a href="./index.html">INICIAR SECION</a></button>
-            <button><a href="./registro.html">REGISTRATE</a></button>
+            <button><a href="./index.html">INICIAR SESION</a></button>
+            <button><a href="./resgistrate.html">REGISTRATE</a></button>
             <br>
             <a href="./recupero.html">Recuperar Contraseña</a>
             
